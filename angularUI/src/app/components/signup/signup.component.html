@@ -1,0 +1,49 @@
+<div class="outer">
+  <div class="position-absolute top-50 start-50 translate-middle child">
+    <div class="card" style="width: 20rem; height: 32rem;">
+      <div class="card-body shadow">
+        <h4 class="card-title login">Sign Up</h4>
+
+        <form [formGroup]="FormSubmit" (ngSubmit)="submit()">
+          <div class="mb-3 pt-3 ">
+            <span class="fa fa-user p-2 ">
+            </span>
+            <input class="wd" type="text" formControlName="firstname" placeholder="FirstName">
+            <small class="text-danger" *ngIf="FormSubmit.controls['firstname'].dirty && FormSubmit.hasError('required','firstname')">*FirstName is required</small>
+          </div>
+          <div class="mb-3 ">
+            <span class="fa fa-user p-2 ">
+            </span>
+            <input class="wd" type="text" formControlName="lastName"  placeholder="LastName">
+            <small class="text-danger" *ngIf="FormSubmit.controls['lastName'].dirty && FormSubmit.hasError('required','lastName')">*LastName is required</small>
+          </div>
+          <div class="mb-3 ">
+            <span class="fa fa-user p-2 ">
+            </span>
+            <input class="wd" type="text" formControlName="email" placeholder="Email">
+            <small class="text-danger" *ngIf="FormSubmit.controls['email'].dirty && FormSubmit.hasError('required','email')">*Email is required</small>
+          </div>
+          <div class="mb-3">
+            <span class="fa fa-user p-2 ">
+            </span>
+            <input class="wd" type="text" formControlName="username" placeholder="Username">
+            <small class="text-danger" *ngIf="FormSubmit.controls['username'].dirty && FormSubmit.hasError('required','username')">*UserName is required</small>
+          </div>
+          <div class="mb-3">
+            <span class="fa fa-lock p-2">
+            </span>
+            <input class="wd" [type]="type" formControlName="password" placeholder="Password">
+            <span id="icon" (click)="hideShoePass()" class="fa {{eyeIcon}} errspan"></span>
+            <small class="text-danger" *ngIf="FormSubmit.controls['password'].dirty && FormSubmit.hasError('required','password')">*Password is required</small>
+          </div>
+          <div>
+            <button (click)="onsubmit()" type="submit" class="btn btn-primary mt-4 w-100" [disabled]="FormSubmit.invalid">Sign Up</button>
+          </div>
+          <div class="text-center pt-4 text-muted">
+           <span class="p-2">Already have account?</span><a id="forget" routerLink="/login">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

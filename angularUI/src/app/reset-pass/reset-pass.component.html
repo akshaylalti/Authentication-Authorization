@@ -1,0 +1,35 @@
+<div class="outer">
+  <div class="position-absolute top-50 start-50 translate-middle child">
+    <div class="card" style="width: 20rem; height: 22rem;">
+      <div class="card-body shadow">
+        <h4 class="card-title login">Reset Pass</h4>
+        <form [formGroup]="FormSubmit">
+          <div class="mb-3 ">
+            <span class="fa fa-user p-2 ">
+            </span>
+            <input class="wd" type="text" formControlName="email" placeholder="Email">
+            <small class="text-danger" *ngIf="FormSubmit.controls['email'].dirty && FormSubmit.hasError('required','email')">*Email is required</small>
+          </div>
+          <div class="mb-3">
+            <span class="fa fa-lock p-2">
+            </span>
+            <input class="wd" [type]="type" formControlName="password" placeholder="Password">
+            <span id="icon" (click)="hideShoePass()" class="fa {{eyeIcon}} errspan"></span>
+            <small class="text-danger" *ngIf="FormSubmit.controls['password'].dirty && FormSubmit.hasError('required','password')">*Password is required</small>
+          </div>
+          <div class="mb-3">
+            <span class="fa fa-lock p-2">
+            </span>
+            <input class="wd" [type]="type" formControlName="Confpassword" placeholder="Conform Password">
+            <span id="icon" (click)="hideShoePass()" class="fa {{eyeIcon}} errspan"></span>
+            <small class="text-danger" *ngIf="FormSubmit.controls['Confpassword'].dirty && FormSubmit.hasError('required','Confpassword')">*Password is required</small>
+          </div>
+          <div>
+
+            <button (click)="onsubmit()" type="submit" class="btn btn-primary mt-4 w-100" [disabled]="FormSubmit.invalid">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

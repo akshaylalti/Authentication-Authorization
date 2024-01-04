@@ -1,0 +1,39 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Angular UI</a>
+    <h4>Hello {{fullName}}</h4>
+  </div>
+</nav>
+
+<div class="body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Role</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of users">
+        <th scope="row">{{data.id}}</th>
+        <td>{{data.firstName}}</td>
+        <td>{{data.lastName}}</td>
+        <td>{{data.username}}</td>
+        <td>{{data.role}}</td>
+        <td>{{data.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-container *ngIf="role == 'Admin'" >
+  <div>
+    <h2>This is only for admin</h2>
+  </div>
+</ng-container>
+
+<button class="btn btn-primary" (click)="logout()">Logout</button>
