@@ -6,7 +6,7 @@ This project demonstrates a web application that implements authentication and a
 
 - **Frontend:**
   - Angular
-
+  - 
 - **Backend:**
   - ASP.NET Core API
 
